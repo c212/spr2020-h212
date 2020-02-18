@@ -7,10 +7,12 @@ public class One {
     String input = leslie.nextLine(); 
     System.out.println("You have typed: " + input); 
     Scanner derek = new Scanner(input); 
+    double sum = 0, count = 0; 
     while (derek.hasNextDouble()) {
       double number = derek.nextDouble(); 
-      System.out.println( number ); 
-        
+      sum += number; 
+      count += 1; 
     }
+    System.out.println( "The average is: " + sum / count );         
   }
 }
