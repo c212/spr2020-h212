@@ -1,18 +1,20 @@
-import java.util.Scanner; 
+import java.util.Arrays; 
 
 public class One {
   public static void main(String[] args) {
-    Scanner leslie = new Scanner(System.in);  
-    System.out.print("type: "); 
-    String input = leslie.nextLine(); 
-    System.out.println("You have typed: " + input); 
-    Scanner derek = new Scanner(input); 
-    double sum = 0, count = 0; 
-    while (derek.hasNextDouble()) {
-      double number = derek.nextDouble(); 
-      sum += number; 
-      count += 1; 
-    }
-    System.out.println( "The average is: " + sum / count );         
+    String spencer = Arrays.toString(args); 
+    System.out.println( "Here: " + spencer ); // [] if nothing on the command line 
+    // java One 1 2 3 4 --> [1, 2, 3, 4]
+    int[] numbers; // declaration 
+    numbers = new int[args.length]; // allocate args.length cells 
+    // for (String number : args) {
+    //   System.out.println( number );
+    // }
+    for (int index = 0; index < args.length; index++) 
+      numbers[index] = Integer.parseInt( args[index] );
+    System.out.println( numbers[2] ); // prints an int the one at index 2
+    Arrays.sort( numbers ); 
+    String advait = Arrays.toString(numbers); 
+    System.out.println( advait ); 
   }
 }
